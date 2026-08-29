@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Life Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- ================= DASHBOARD ================= -->
+    <div class="dashboard">
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+
+            <!-- ================= TOP BAR ================= -->
+            <div class="topbar">
+
+                <div>
+                    <span class="page-label">PERSONAL SPACE</span>
+                    <h1>My Dashboard</h1>
+                </div>
+
+                <div class="topbar-actions">
+
+                    <div class="current-date">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span id="date-display">Date</span>
+                    </div>
+
+                    <button
+                        id="theme-toggle"
+                        class="theme-button"
+                        type="button"
+                        aria-label="Toggle dark mode"
+                    >
+                        <i class="fa-solid fa-moon"></i>
+                        <span>Dark Mode</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= WELCOME ================= -->
+            <section class="welcome-card">
+
+                <div class="welcome-content">
+
+                    <span class="welcome-label">
+                        <i class="fa-regular fa-sun"></i>
+                        <span id="greeting-msg">Good Morning</span>
+                    </span>
+
+                    <h2>
+                        Hello,
+                        <input
+                            type="text"
+                            id="name-input"
+                            placeholder="Your Name"
+                            autocomplete="off"
+                        >
+                        👋
+                    </h2>
+
+                    <p>
+                        Make today productive, one task at a time.
+                    </p>
+
+                </div>
+
+
+                <!-- Clock -->
+                <div class="clock-box">
+
+                    <div id="time-display">
+                        00:00:00
+                    </div>
+
+                    <span>LOCAL TIME</span>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= OVERVIEW ================= -->
+            <div class="overview-grid">
+
+                <!-- Today's Tasks -->
+                <div class="overview-card">
+
+                    <div class="overview-icon">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+
+                    <div>
+                        <span>Today's Tasks</span>
+                        <strong id="task-count">0</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- Focus Session -->
+                <div class="overview-card">
+
+                    <div class="overview-icon">
+                        <i class="fa-solid fa-hourglass-half"></i>
+                    </div>
+
+                    <div>
+                        <span>Focus Session</span>
+                        <strong>25 min</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- Productivity -->
+                <div class="overview-card">
+
+                    <div class="overview-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+
+                    <div>
+                        <span>Productivity</span>
+                        <strong>Ready</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MAIN GRID ================= -->
+            <div class="content-grid">
+
+                <!-- ================= FOCUS TIMER ================= -->
+                <section
+                    class="dashboard-card timer-card"
+                    id="timer"
+                >
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="section-label">
+                                FOCUS
+                            </span>
+
+                            <h3>
+                                Focus Timer
+                            </h3>
+                        </div>
+
+                        <div class="card-icon">
+                            <i class="fa-solid fa-stopwatch"></i>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Timer -->
+                    <div class="timer-wrapper">
+
+                        <div class="timer-circle">
+
+                            <div>
+
+                                <strong id="timer-display">
+                                    25:00
+                                </strong>
+
+                                <span>
+                                    MINUTES
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Timer Controls -->
+                    <div class="timer-controls">
+
+                        <button
+                            id="start-btn"
+                            class="primary-btn"
+                            type="button"
+                        >
+                            <i class="fa-solid fa-play"></i>
+                            Start
+                        </button>
+
+                        <button
+                            id="stop-btn"
+                            class="secondary-btn"
+                            type="button"
+                        >
+                            <i class="fa-solid fa-pause"></i>
+                            Stop
+                        </button>
+
+                        <button
+                            id="reset-btn"
+                            class="icon-btn"
+                            type="button"
+                            aria-label="Reset timer"
+                        >
+                            <i class="fa-solid fa-rotate-right"></i>
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================= TASKS ================= -->
+                <section
+                    class="dashboard-card tasks-card"
+                    id="tasks"
+                >
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="section-label">
+                                PRODUCTIVITY
+                            </span>
+
+                            <h3>
+                                My Tasks
+                            </h3>
+                        </div>
+
+                        <div class="card-icon">
+                            <i class="fa-solid fa-check-double"></i>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Add Task -->
+                    <div class="input-group">
+
+                        <input
+                            type="text"
+                            id="task-input"
+                            placeholder="What needs to be done?"
+                            autocomplete="off"
+                        >
+
+                        <button
+                            id="add-task-btn"
+                            type="button"
+                        >
+                            <i class="fa-solid fa-plus"></i>
+                            Add
+                        </button>
+
+                    </div>
+
+
+                    <!-- Task List -->
+                    <ul id="task-list"></ul>
+
+                </section>
+
+
+                <!-- ================= QUICK LINKS ================= -->
+                <section
+                    class="dashboard-card links-card"
+                    id="links"
+                >
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="section-label">
+                                SHORTCUTS
+                            </span>
+
+                            <h3>
+                                Quick Links
+                            </h3>
+                        </div>
+
+                        <div class="card-icon">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Add Link -->
+                    <div class="link-inputs">
+
+                        <input
+                            type="text"
+                            id="link-name"
+                            placeholder="Link name"
+                            autocomplete="off"
+                        >
+
+                        <input
+                            type="url"
+                            id="link-url"
+                            placeholder="https://example.com"
+                            autocomplete="off"
+                        >
+
+                        <button
+                            id="add-link-btn"
+                            type="button"
+                        >
+                            <i class="fa-solid fa-plus"></i>
+                            Add Link
+                        </button>
+
+                    </div>
+
+
+                    <!-- Links Container -->
+                    <div
+                        id="links-container"
+                        class="links-container"
+                    ></div>
+
+                </section>
+
+            </div>
+
+
+            <!-- ================= FOOTER ================= -->
+            <footer class="dashboard-footer">
+
+                <span>
+                    <i class="fa-solid  fa-leaf"></i>
+                    LifeFlow Dashboard
+                </span>
+
+                <span>
+                    Make your day count.
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
